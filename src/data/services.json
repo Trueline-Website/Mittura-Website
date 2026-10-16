@@ -1,0 +1,78 @@
+[
+  {
+    "id": "01",
+    "number": "01",
+    "title": "TURNKEY CONSTRUCTION & CIVIL WORKS",
+    "lead": "Villas, Commercial Hubs, Industrial Facilities",
+    "description": "Full civil construction and turnkey building projects taking direct control of the construction lifecycle from groundbreaking to structural completion with uncompromised engineering discipline.",
+    "items": [
+      "Villas & Private Estates",
+      "Commercial Hubs & Corporate Offices",
+      "Warehouses & Industrial Facilities",
+      "Structural Refurbishment & Civil Works",
+      "Concrete Repair, Flooring & Waterproofing"
+    ],
+    "images": [
+      "/services/construction_1.png",
+      "/services/construction_2.png",
+      "/services/construction_3.png"
+    ]
+  },
+  {
+    "id": "02",
+    "number": "02",
+    "title": "LUXURY INTERIOR FIT-OUT",
+    "lead": "Corporate Offices, Hospitality, Bespoke Joinery",
+    "description": "Complete interior architecture and turnkey fit-out solutions for residential, corporate headquarters, luxury retail, and hospitality spaces with fine European-grade joinery craftsmanship.",
+    "items": [
+      "Corporate Headquarters & Workspaces",
+      "Luxury Retail & Flagship Showrooms",
+      "Bespoke Architectural Joinery & Millwork",
+      "Marble, Tile & Hardwood Flooring",
+      "Gypsum Partitions & Integrated Ceilings"
+    ],
+    "images": [
+      "/services/fitout_1.png",
+      "/services/fitout_2.png",
+      "/services/fitout_3.png"
+    ]
+  },
+  {
+    "id": "03",
+    "number": "03",
+    "title": "COMPREHENSIVE MEP SERVICES",
+    "lead": "HVAC, Electrical, Plumbing, DEWA & DCD Compliance",
+    "description": "End-to-end Mechanical, Electrical, and Plumbing engineering delivering certified installations compliant with DEWA, Dubai Civil Defence (DCD), and municipal regulations.",
+    "items": [
+      "HVAC Centralized Systems & Energy Balancing",
+      "Electrical Infrastructure & Intelligent Lighting",
+      "Sanitary Plumbing & Drainage Solutions",
+      "Fire Fighting & Early Warning Alarm Systems",
+      "DEWA, DCD & Authority Approvals Management"
+    ],
+    "images": [
+      "/services/mep_1.png",
+      "/services/mep_2.png",
+      "/services/mep_3.png"
+    ]
+  },
+  {
+    "id": "04",
+    "number": "04",
+    "title": "ARCHITECTURAL GLASS & ALUMINIUM",
+    "lead": "Curtain Walling, High-Performance Façades",
+    "description": "High-precision fabrication and engineered installation of architectural curtain walls, frameless glazing, structural envelope systems, and thermally broken aluminium frames.",
+    "items": [
+      "Structural Curtain Walling & Unitized Systems",
+      "Thermally Broken Aluminium Windows & Doors",
+      "Architectural Glass Balustrades & Canopies",
+      "Sliding & Folding Panoramic Glazing",
+      "Acoustic Insulation & Solar Control Facades"
+    ],
+    "images": [
+      "/services/aluminum_1.png",
+      "/services/aluminum_2.png",
+      "/services/aluminum_3.png"
+    ]
+  }
+]

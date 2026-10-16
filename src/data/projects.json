@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "index": "01",
+    "name": "CASA LUSSO",
+    "category": "Retail",
+    "location": "Al Barsha, Dubai",
+    "type": "Luxury Furniture Showroom",
+    "timeline": "Delivered 2023",
+    "scope": "Turnkey Fit-Out, Bespoke Joinery & Premium Marble Finishes",
+    "description": "A high-end interior fit-out project for a luxury furniture brand in Al Barsha, focusing on elegant display galleries, architectural lighting schemes, and sophisticated bespoke craftsmanship.",
+    "mainImage": "/projects/casa-lusso-main.png",
+    "gallery": ["/portfolio-bg.png", "/process-management.png", "/about-img.png"]
+  },
+  {
+    "id": 2,
+    "index": "02",
+    "name": "ETISALAT CORPORATE HUB",
+    "category": "Commercial",
+    "location": "Al Kifaf, Sheikh Zayed Road, Dubai",
+    "type": "Telecom Facility & Corporate Office",
+    "timeline": "Delivered 2022",
+    "scope": "Turnkey Fit-Out, Technical Infrastructure & MEP Integration",
+    "description": "Comprehensive turnkey fit-out and specialized MEP systems for a critical telecommunications hub, adhering to mission-critical operational standards and refined corporate aesthetics.",
+    "mainImage": "/projects/etisalat-main.png",
+    "gallery": ["/process-management.png", "/about-img.png", "/vision-img.png"]
+  },
+  {
+    "id": 3,
+    "index": "03",
+    "name": "THE 118",
+    "category": "Residential",
+    "location": "Downtown Dubai",
+    "type": "Elite Residential Luxury",
+    "timeline": "Delivered 2021",
+    "scope": "Super-Prime Residential Finishes & Precision Joinery",
+    "description": "Ultra-luxury residential execution in the epicenter of Downtown Dubai, showcasing flawless architectural detailing, handcrafted European joinery, and private sanctuary engineering.",
+    "mainImage": "/projects/the118-main.png",
+    "gallery": ["/vision-img.png", "/why-img.png", "/about-img.png"]
+  },
+  {
+    "id": 4,
+    "index": "04",
+    "name": "ADRIA MEDICAL CENTER",
+    "category": "Healthcare",
+    "location": "Jumeirah, Dubai",
+    "type": "Specialized Healthcare Facility",
+    "timeline": "Delivered 2024",
+    "scope": "Clinical-Grade Sterile Environments & Specialized MEP",
+    "description": "Specialized healthcare facility in Jumeirah engineered to exacting clinical-grade standards, incorporating certified medical gas lines, specialized HVAC filtration, and hygienic architectural surfaces.",
+    "mainImage": "/projects/adria-main.png",
+    "gallery": ["/about-img.png", "/vision-img.png", "/why-img.png"]
+  },
+  {
+    "id": 5,
+    "index": "05",
+    "name": "AKOYA OXYGEN & MIRA OASIS",
+    "category": "Residential",
+    "location": "Dubai, UAE",
+    "type": "Master Community Infrastructure",
+    "timeline": "Delivered 2023",
+    "scope": "Civil Infrastructure, Community Works & Maintenance Governance",
+    "description": "Large-scale community infrastructure delivery and technical civil execution across Dubai's signature master-planned developments, ensuring long-term resilience and community connectivity.",
+    "mainImage": "/projects/akoya-main.png",
+    "gallery": ["/why-img.png", "/vision-img.png", "/about-img.png"]
+  },
+  {
+    "id": 6,
+    "index": "06",
+    "name": "SAJ DEVELOPMENT PIPELINE",
+    "category": "Commercial",
+    "location": "Prime Dubai Locations",
+    "type": "Upcoming Turnkey Residential & Commercial (2026+)",
+    "timeline": "2026+ Mobilization",
+    "scope": "Turnkey Civil Construction, MEP & 24-Month Platinum Guarantee",
+    "description": "Strategic partnership pipeline mobilizing next-generation residential and commercial assets with SAJ Development, backed by transparent milestone governance and Mittura's 24-Month Platinum Guarantee.",
+    "mainImage": "/hero-highrise.png",
+    "gallery": ["/hero-terminal.png", "/hero-bridge.png", "/hero-villa.png"]
+  }
+]
