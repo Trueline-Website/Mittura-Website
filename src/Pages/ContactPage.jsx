@@ -146,10 +146,10 @@ export default function ContactPage() {
                         PHYSICAL LOCATION
                       </p>
                       <p className="font-heading text-sm font-bold text-slate-900 uppercase leading-snug">
-                        Suite 3504, Aspin Commercial Tower, Sheikh Zayed Road, Dubai, UAE
+                        3504, Aspin Tower, P.O.Box 237763, Sheikh Zayed Road, Dubai, UAE
                       </p>
                       <p className="text-xs text-slate-500 font-sans mt-0.5">
-                        P.O. Box: 237763, Dubai, United Arab Emirates
+                        Sheikh Zayed Road, Dubai, United Arab Emirates
                       </p>
                     </div>
                   </div>
@@ -189,13 +189,18 @@ export default function ContactPage() {
                 </div>
 
                 {submitted ? (
-                  <div className="p-8 bg-white border border-[#C43030] text-center">
-                    <CheckCircle2 className="w-12 h-12 text-[#C43030] mx-auto mb-4" />
+                  <div className="p-8 bg-white border-2 border-[#30C46A] text-center rounded-[4px] shadow-sm">
+                    <div className="w-16 h-16 rounded-full bg-[#30C46A]/10 border border-[#30C46A] flex items-center justify-center mx-auto mb-4">
+                      <CheckCircle2 className="w-8 h-8 text-[#30C46A]" />
+                    </div>
+                    <span className="text-[10px] font-mono font-bold tracking-[0.2em] text-[#30C46A] uppercase block mb-1">
+                      TRANSMISSION CONFIRMED
+                    </span>
                     <h4 className="font-heading text-xl font-bold uppercase text-slate-900 mb-2">
                       INQUIRY TRANSMITTED SUCCESSFULLY
                     </h4>
-                    <p className="text-sm text-slate-600 font-body mb-6">
-                      Thank you for contacting Mittura Building Contracting L.L.C. A senior technical representative will review your project brief and get in touch within 24 hours.
+                    <p className="text-sm text-slate-600 font-body mb-6 max-w-md mx-auto">
+                      Thank you for contacting Mittura Building Contracting L.L.C. Your RFP inquiry has been routed to info@mittura.com. A senior technical representative will review your project brief and get in touch within 24 hours.
                     </p>
                     <button
                       onClick={() => setSubmitted(false)}

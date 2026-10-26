@@ -15,11 +15,22 @@
 }
 
 :root {
-  --brand-red: #C43030;
+  --mittura-red: #C43030;
   --heritage-crimson: #812425;
   --deep-ebony: #3D181A;
-  --core-black: #000000;
+  --black: #000000;
   --muted-gold: #D4AF37;
+  --accent-green: #30C46A;
+  --balance-blue: #2F4F6F;
+  --neutral: #F5F5F5;
+  --brand-gradient: linear-gradient(90deg, #3D181A 0%, #812425 45%, #C43030 100%);
+  --font-head: "Inter", sans-serif;
+  --font-sub: "Roboto Slab", serif;
+  --font-body: "Inter", sans-serif;
+
+  /* Backward compatibility aliases */
+  --brand-red: #C43030;
+  --core-black: #000000;
   --slate-blue: #2F4F6F;
   --neutral-offwhite: #F5F5F5;
 }
@@ -77,5 +88,30 @@ input[type="reset"] {
 }
 .btn-gold-accent:hover {
   filter: brightness(1.1);
+}
+
+/* Page Entry Slide-Up Animation */
+@keyframes pageSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: pageSlideUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-slide-up {
+    animation: none;
+    transform: none;
+    opacity: 1;
+  }
 }
 

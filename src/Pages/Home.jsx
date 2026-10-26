@@ -5,11 +5,11 @@ import About from "../Components/About";
 import Portfolio from "../Components/Portfolio";
 import Clients from "../Components/Clients";
 
-export default function Home() {
+export default function Home({ isLoaded = true }) {
   return (
     <div className="w-full bg-white font-sans antialiased">
       {/* HERO HEADER (FULL SCREEN ARCHITECTURAL) */}
-      <Hero />
+      <Hero isLoaded={isLoaded} />
 
       {/* SECTION 01: 'OUR SERVICES' (STAGGERED EDITORIAL GRID) */}
       <Services />

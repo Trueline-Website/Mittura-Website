@@ -7,7 +7,7 @@ const corporatePartners = [
   { name: "Casa Lusso", tag: "Luxury Retail Flagship" },
   { name: "The 118 Downtown", tag: "Elite Residential Finishes" },
   { name: "Adria Medical Center", tag: "Specialized Healthcare" },
-  { name: "SAJ Development", tag: "Strategic Pipeline 2026+" },
+  { name: "SAJ Development", tag: "Villa Project Award" },
   { name: "Akoya Oxygen", tag: "Master Community Civil" },
   { name: "Mira Oasis", tag: "Turnkey Maintenance" }
 ];

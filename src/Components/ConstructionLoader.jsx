@@ -1,68 +1,130 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import logoWhite from "../assets/mitturafooter.png";
 
-const ConstructionLoader = () => {
-  // Dark luxury gradient (WORDS ONLY)
-  const gradientText =
-    "bg-gradient-to-r from-[#1a1a1a] via-[#4b0f14] to-[#7a1c1c] bg-clip-text text-transparent";
+export default function ConstructionLoader({ onComplete }) {
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    // Elegant, deliberate progress counter from 0 to 100%
+    const interval = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          clearInterval(interval);
+          return 100;
+        }
+        // Smooth pacing that feels authentic and high-end
+        const remaining = 100 - prev;
+        const step = remaining > 20 ? (Math.random() > 0.4 ? 1 : 2) : 1;
+        return Math.min(100, prev + step);
+      });
+    }, 28);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    if (progress === 100) {
+      const exitTimer = setTimeout(() => {
+        if (onComplete) onComplete();
+      }, 450);
+      return () => clearTimeout(exitTimer);
+    }
+  }, [progress, onComplete]);
 
   return (
-    <div className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-white overflow-hidden select-none font-sans">
+    <motion.div
+      initial={{ y: 0 }}
+      exit={{
+        y: "-100%",
+        transition: {
+          duration: 0.95,
+          ease: [0.77, 0, 0.175, 1],
+        },
+      }}
+      className="fixed inset-0 z-[9999] flex flex-col justify-between bg-[#3D181A] text-white p-6 sm:p-12 overflow-hidden select-none"
+    >
+      {/* Brand architectural gradient ambient backdrop */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#3D181A] via-[#812425]/40 to-[#000000] pointer-events-none" />
+      <div className="absolute -top-32 -right-32 w-96 h-96 bg-[#C43030]/25 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-[#D4AF37]/15 rounded-full blur-[140px] pointer-events-none" />
 
-      <div className="relative w-full max-w-[600px] flex flex-col items-center justify-center p-8">
+      {/* TOP BAR */}
+      <div className="relative z-10 flex items-center justify-between border-b border-white/10 pb-6">
+        <div className="flex items-center gap-3">
+          <span className="w-2.5 h-2.5 rounded-full bg-[#C43030] animate-pulse" />
+          <span className="font-mono text-[10px] sm:text-xs font-bold tracking-[0.3em] uppercase text-slate-300">
+            MITTURA GROUP &bull; DUBAI, UAE
+          </span>
+        </div>
 
-        {/* SITTING CHIBI BOY */}
-        <div className="relative w-full aspect-square flex items-center justify-center max-w-[350px]">
+        <span className="font-mono text-xs font-semibold tracking-widest text-[#D4AF37] uppercase">
+          EST. 2018
+        </span>
+      </div>
 
+      {/* CENTER STAGE: OFFICIAL LOGO & EDITORIAL STATEMENT */}
+      <div className="relative z-10 max-w-4xl mx-auto w-full text-center flex flex-col items-center my-auto py-8">
+        {/* Dual-language white logo */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.92, y: 15 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-8"
+        >
           <img
-            src="./loader-boy-sitting.png"
-            alt="Loading..."
-            className="w-full h-auto mix-blend-multiply transition-opacity duration-500 animate-[chibi-float_4s_infinite_ease-in-out]"
+            src={logoWhite}
+            alt="Mittura Group"
+            className="h-14 sm:h-20 w-auto object-contain mx-auto drop-shadow-lg"
+          />
+        </motion.div>
+
+        {/* Wordmark & Brand message */}
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+          className="font-heading text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-[-0.03em] text-white leading-tight mb-3"
+        >
+          BUILDING EXCELLENCE.
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+          className="font-subheading text-sm sm:text-lg text-slate-300 font-normal tracking-wide max-w-xl"
+        >
+          Delivering end-to-end infrastructure solutions with precision and reliability.
+        </motion.p>
+      </div>
+
+      {/* BOTTOM PROGRESS METRICS & SLIDEUP STATUS */}
+      <div className="relative z-10 w-full max-w-4xl mx-auto">
+        <div className="flex items-end justify-between mb-3 text-xs font-mono">
+          <div className="flex items-center gap-2 text-slate-400">
+            <span className="text-[#C43030] font-bold">01 //</span>
+            <span className="tracking-widest uppercase">INITIALIZING ARCHITECTURAL ENVIRONMENT</span>
+          </div>
+          <span className="text-xl sm:text-2xl font-black font-heading text-white">
+            {progress}%
+          </span>
+        </div>
+
+        {/* Precision Progress Track */}
+        <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden relative">
+          <motion.div
+            className="h-full bg-gradient-to-r from-[#3D181A] via-[#812425] to-[#C43030]"
+            style={{ width: `${progress}%` }}
+            transition={{ ease: "linear" }}
           />
         </div>
 
-        {/* LOADING SECTION */}
-        <div className="mt-2 flex flex-col items-center w-full">
-
-          {/* Gradient Loading Text */}
-          <h2
-            className={`text-[52px] font-[1000] tracking-[0.2em] uppercase leading-none text-center ${gradientText}`}
-          >
-            Loading
-          </h2>
-
-          {/* Gradient Progress Bar */}
-          <div className="w-64 h-2 bg-slate-50 rounded-full mt-10 relative overflow-hidden border border-slate-100">
-
-            <div className="absolute top-0 left-0 h-full w-full bg-gradient-to-r from-[#1a1a1a] via-[#4b0f14] to-[#7a1c1c] animate-[refined-progress_3s_infinite_linear]" />
-
-          </div>
+        <div className="flex items-center justify-between mt-3 text-[10px] font-mono text-white/40 uppercase tracking-widest">
+          <span>CIVIL &bull; FIT-OUT &bull; MEP &bull; INFRASTRUCTURE</span>
+          <span>DUBAI MUNICIPALITY &bull; DEWA &bull; DCD</span>
         </div>
       </div>
-
-      <style>{`
-        @keyframes chibi-float {
-          0%, 100% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-10px);
-          }
-        }
-
-        @keyframes refined-progress {
-          0% {
-            transform: translateX(-100%);
-          }
-          50% {
-            transform: translateX(0%);
-          }
-          100% {
-            transform: translateX(100%);
-          }
-        }
-      `}</style>
-    </div>
+    </motion.div>
   );
-};
-
-export default ConstructionLoader;
+}

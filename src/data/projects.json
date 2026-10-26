@@ -67,14 +67,15 @@
   {
     "id": 6,
     "index": "06",
-    "name": "SAJ DEVELOPMENT PIPELINE",
-    "category": "Commercial",
-    "location": "Prime Dubai Locations",
-    "type": "Upcoming Turnkey Residential & Commercial (2026+)",
-    "timeline": "2026+ Mobilization",
+    "name": "SAJ DEVELOPMENT VILLA PROJECT",
+    "category": "Residential",
+    "location": "Dubai, UAE",
+    "type": "Private Luxury Villa",
+    "timeline": "Awarded Project",
     "scope": "Turnkey Civil Construction, MEP & 24-Month Platinum Guarantee",
-    "description": "Strategic partnership pipeline mobilizing next-generation residential and commercial assets with SAJ Development, backed by transparent milestone governance and Mittura's 24-Month Platinum Guarantee.",
-    "mainImage": "/hero-highrise.png",
-    "gallery": ["/hero-terminal.png", "/hero-bridge.png", "/hero-villa.png"]
+    "description": "A villa project awarded to Mittura by SAJ Development. Mittura brings technical precision, our signature 24-Month Platinum Guarantee, and transparent milestone governance to its delivery.",
+    "mainImage": "/hero-villa.png",
+    "gallery": ["/hero-villa.png", "/about-img.png", "/process-management.png"],
+    "isPlaceholder": true
   }
 ]

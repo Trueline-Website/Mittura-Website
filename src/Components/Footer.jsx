@@ -46,7 +46,7 @@ export default function Footer() {
               to="/contact"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-6 sm:px-8 py-3.5 sm:py-4 bg-[#C43030] hover:bg-[#812425] text-white font-heading text-xs sm:text-sm font-bold tracking-[0.1em] sm:tracking-[0.15em] uppercase transition-all duration-300 shadow-xl active:scale-95 rounded-[4px] whitespace-nowrap shrink-0"
             >
-              <span className="whitespace-nowrap">[ GET IN TOUCH / SUBMIT RFP ]</span>
+              <span className="whitespace-nowrap">SUBMIT RFP / GET IN TOUCH</span>
               <ArrowRight className="w-4 h-4 shrink-0" />
             </Link>
           </div>
@@ -109,7 +109,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link to="/portfolio" className="hover:text-[#C43030] transition-colors flex items-center gap-2 pt-2 text-white font-semibold">
-                  <span className="text-[#D4AF37]">&gt;</span> SAJ Development Pipeline (2026+)
+                  <span className="text-[#D4AF37]">&gt;</span> SAJ Development Villa Project
                 </Link>
               </li>
             </ul>
@@ -128,7 +128,7 @@ export default function Footer() {
                 <div className="font-sans">
                   <p className="font-bold text-white uppercase text-xs tracking-wider">OFFICIAL REGISTERED ADDRESS</p>
                   <p className="text-slate-300 text-xs sm:text-sm mt-0.5">
-                    Suite 3504, Aspin Commercial Tower, Sheikh Zayed Road, Dubai, UAE
+                    3504, Aspin Tower, P.O.Box 237763, Sheikh Zayed Road, Dubai, UAE
                   </p>
                 </div>
               </div>

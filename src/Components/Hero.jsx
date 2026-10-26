@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
+import { motion } from "framer-motion";
 
-export default function Hero() {
+export default function Hero({ isLoaded = true }) {
   const [activeSlide, setActiveSlide] = useState(0);
 
   const architecturalSlides = [
@@ -72,7 +73,12 @@ export default function Hero() {
       </div>
 
       {/* RIGHT EDGE VERTICAL SIDEBAR MARKER (SMALL-CAPS INTER) */}
-      <aside className="hidden xl:flex fixed right-8 top-1/2 -translate-y-1/2 z-30 flex-col items-center gap-6 pointer-events-none">
+      <motion.aside
+        initial={{ opacity: 0, x: 20 }}
+        animate={isLoaded ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
+        transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+        className="hidden xl:flex fixed right-8 top-1/2 -translate-y-1/2 z-30 flex-col items-center gap-6 pointer-events-none"
+      >
         <div className="w-[1px] h-16 bg-white/20" />
         <span
           className="text-[11px] font-semibold tracking-[0.35em] text-white/70 uppercase writing-mode-vertical"
@@ -81,42 +87,68 @@ export default function Hero() {
           CONSTRUCTION | FIT-OUT | MEP | INFRASTRUCTURE
         </span>
         <div className="w-[1px] h-16 bg-white/20" />
-      </aside>
+      </motion.aside>
 
       {/* MAIN EDITORIAL HERO CONTAINER */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-auto py-10">
         <div className="max-w-3xl flex flex-col items-start">
           
           {/* BRAND ACCENT / 10% CLEARSPACE BADGE */}
-          <div className="inline-flex items-center gap-3 px-3.5 py-1.5 bg-[#000000]/60 backdrop-blur-md border-l-2 border-[#C43030] mb-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isLoaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="inline-flex items-center gap-3 px-3.5 py-1.5 bg-[#000000]/60 backdrop-blur-md border-l-2 border-[#C43030] mb-8"
+          >
             <span className="w-2 h-2 rounded-full bg-[#C43030] animate-pulse" />
             <span className="text-[11px] font-bold tracking-[0.25em] text-white uppercase font-sans">
               DUBAI, UAE &bull; ESTABLISHED 2018
             </span>
-          </div>
+          </motion.div>
 
-          {/* MASSIVE WORDMARK 'MITTURA' IN INTER BOLD (WHITE/REVERSED) */}
-          <h1 className="font-heading text-6xl sm:text-7xl md:text-8xl lg:text-[104px] font-black tracking-[-0.02em] leading-none text-white uppercase mb-4 select-none drop-shadow-sm">
-            MITTURA
-          </h1>
+          {/* MAIN DISPLAY: BRAND MESSAGE IN INTER BOLD (WHITE) */}
+          <motion.h1
+            initial={{ opacity: 0, y: 35 }}
+            animate={isLoaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 35 }}
+            transition={{ duration: 0.85, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-[84px] font-black tracking-[-0.04em] leading-[1.05] text-white uppercase mb-6 select-none drop-shadow-sm max-w-4xl"
+          >
+            BUILDING EXCELLENCE. <br className="hidden sm:inline" />
+            <span className="text-white/80">DELIVERING TRUST.</span>
+          </motion.h1>
 
           {/* SUB-HEADER IN ROBOTO SLAB */}
-          <h2 className="font-subheading text-xl sm:text-2xl md:text-3xl text-slate-100 font-normal tracking-wide uppercase mb-8 max-w-2xl border-l-2 border-[#D4AF37] pl-4">
-            CREATING STRUCTURES THAT INSPIRE
-          </h2>
+          <motion.h2
+            initial={{ opacity: 0, x: -25 }}
+            animate={isLoaded ? { opacity: 1, x: 0 } : { opacity: 0, x: -25 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="font-subheading text-lg sm:text-xl md:text-2xl text-slate-100 font-normal tracking-wide mb-8 max-w-2xl border-l-2 border-[#D4AF37] pl-4 leading-relaxed"
+          >
+            Delivering end-to-end infrastructure solutions with precision and reliability.
+          </motion.h2>
 
           {/* BODY TEXT IN INTER REGULAR */}
-          <p className="font-body text-slate-300 text-sm sm:text-base max-w-xl leading-[1.65] mb-10">
-            Integrated turnkey building contractor delivering civil engineering, luxury interior fit-out, and MEP solutions across landmark UAE developments with our signature 24-Month Platinum Guarantee.
-          </p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={isLoaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.75, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="font-body text-slate-300 text-sm sm:text-base max-w-xl leading-[1.65] mb-10"
+          >
+            Mittura Building Contracting L.L.C. takes direct control of the construction lifecycle across civil engineering, luxury interior fit-out, and MEP solutions across landmark UAE developments with our signature 24-Month Platinum Guarantee.
+          </motion.p>
 
-          {/* PRIMARY ACTION: RECTANGULAR CTA BUTTON IN MITTURA RED (#C43030) */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
+          {/* PRIMARY ACTION: RECTANGULAR MITTURA RED BUTTON, WHITE TEXT 'INQUIRE NOW' */}
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            animate={isLoaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 25 }}
+            transition={{ duration: 0.75, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto"
+          >
             <Link
               to="/contact"
               className="bg-[#C43030] hover:bg-[#812425] text-white px-8 py-4 text-xs sm:text-sm font-bold tracking-[0.15em] uppercase transition-all duration-300 flex items-center justify-center gap-3 shadow-lg active:scale-95 group rounded-[4px]"
             >
-              <span>[ CALCULATE ESTIMATE / INQUIRE NOW &gt; ]</span>
+              <span>INQUIRE NOW</span>
             </Link>
 
             <Link
@@ -126,7 +158,7 @@ export default function Hero() {
               <span>EXPLORE PORTFOLIO</span>
               <ChevronRight className="w-4 h-4 text-[#C43030]" />
             </Link>
-          </div>
+          </motion.div>
 
         </div>
       </div>

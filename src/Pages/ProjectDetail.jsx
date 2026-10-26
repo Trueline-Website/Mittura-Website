@@ -2,6 +2,7 @@ import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, MapPin, Tag, Calendar, ShieldCheck, ArrowRight } from "lucide-react";
 import projects from "../data/projects.json";
+import logoWhite from "../assets/mitturafooter.png";
 
 export default function ProjectDetail() {
   const { id } = useParams();
@@ -110,24 +111,42 @@ export default function ProjectDetail() {
 
           {/* RIGHT: MAIN PROJECT PHOTOGRAPHY (60% VISUAL FOCAL POINT) */}
           <div className="lg:col-span-6">
-            <div className="relative aspect-[4/3] bg-[#F5F5F5] overflow-hidden border border-slate-200 shadow-lg">
-              <img
-                src={project.mainImage}
-                alt={project.name}
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  e.target.src = "/photo2.jpeg";
-                }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 text-white">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-[#D4AF37] block">
-                  MITTURA BUILDING CONTRACTING L.L.C.
-                </span>
-                <p className="font-heading text-sm font-bold uppercase mt-1">
-                  {project.location} &bull; {project.timeline}
-                </p>
-              </div>
+            <div className="relative aspect-[4/3] bg-[#3D181A] overflow-hidden border border-slate-200 shadow-lg">
+              {project.isPlaceholder ? (
+                <div className="w-full h-full bg-gradient-to-r from-[#3D181A] via-[#812425] to-[#C43030] flex flex-col items-center justify-center p-8 text-center relative">
+                  <img
+                    src={logoWhite}
+                    alt="Mittura Logo"
+                    className="h-14 w-auto object-contain mb-4 drop-shadow-md opacity-90"
+                  />
+                  <span className="text-xs font-mono font-bold tracking-[0.25em] text-[#D4AF37] uppercase">
+                    AWARDED VILLA PROJECT
+                  </span>
+                  <p className="text-sm text-white/80 mt-2 max-w-sm">
+                    Project photography, renders and specifications will be updated upon client release.
+                  </p>
+                </div>
+              ) : (
+                <>
+                  <img
+                    src={project.mainImage}
+                    alt={project.name}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      e.target.src = "/photo2.jpeg";
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <div className="absolute bottom-6 left-6 right-6 text-white">
+                    <span className="text-[10px] font-mono uppercase tracking-widest text-[#D4AF37] block">
+                      MITTURA BUILDING CONTRACTING L.L.C.
+                    </span>
+                    <p className="font-heading text-sm font-bold uppercase mt-1">
+                      {project.location} &bull; {project.timeline}
+                    </p>
+                  </div>
+                </>
+              )}
             </div>
           </div>
 

@@ -144,6 +144,17 @@ export default function About() {
                 Our multidisciplinary teams have proven their precision across demanding sectors in the UAE: executing secure corporate environments for HSBC and Etisalat (Al Kifaf), delivering luxury residential finishes at The 118 Downtown Dubai, bespoke private villas, and community infrastructure across Akoya Oxygen and Mira Oasis. In specialized commercial sectors, we have built clinical-grade healthcare facilities at Adria Medical Center Jumeirah and premier retail environments for Casa Lusso in Al Barsha.
               </motion.p>
 
+              {/* The next horizon — SAJ Development villa project (Inter Regular, Line-height 1.65) */}
+              <motion.p
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                className="font-body text-slate-600 text-sm sm:text-[15px] leading-[1.65]"
+              >
+                Building on this track record, Mittura has been entrusted with a villa project by SAJ Development. We bring technical precision, our signature 24-Month Platinum Guarantee, and transparent milestone governance to its delivery.
+              </motion.p>
+
 
               {/* CTA Action Buttons */}
               <motion.div
