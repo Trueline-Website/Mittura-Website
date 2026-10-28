@@ -4,6 +4,7 @@ import { MapPin, Calendar, ArrowRight, Layers, ArrowUpRight } from "lucide-react
 import { motion, AnimatePresence } from "framer-motion";
 import projectsData from "../data/projects.json";
 import logoWhite from "../assets/mitturafooter.png";
+import ProjectCardImage from "./ProjectCardImage";
 
 export default function Portfolio() {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -163,33 +164,7 @@ export default function Portfolio() {
                 >
                   {/* 60% VISUAL FOCAL POINT: HIGH QUALITY PHOTOGRAPHY OR BRAND GRADIENT PLACEHOLDER */}
                   <div className="relative aspect-[4/3] overflow-hidden bg-[#3D181A]">
-                    {project.isPlaceholder ? (
-                      <div className="w-full h-full bg-gradient-to-r from-[#3D181A] via-[#812425] to-[#C43030] flex flex-col items-center justify-center p-6 text-center relative group-hover:scale-105 transition-transform duration-700">
-                        <img
-                          src={logoWhite}
-                          alt="Mittura Logo"
-                          className="h-10 w-auto object-contain mb-3 drop-shadow-md opacity-90"
-                        />
-                        <span className="text-[10px] font-mono font-bold tracking-[0.2em] text-[#D4AF37] uppercase">
-                          AWARDED VILLA PROJECT
-                        </span>
-                        <span className="text-xs font-semibold text-white/80 mt-1">
-                          Project details forthcoming
-                        </span>
-                      </div>
-                    ) : (
-                      <>
-                        <img
-                          src={project.mainImage}
-                          alt={project.name}
-                          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                          onError={(e) => {
-                            e.target.src = "/photo2.jpeg";
-                          }}
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
-                      </>
-                    )}
+                    <ProjectCardImage project={project} logoWhite={logoWhite} />
 
                     {/* Index & Category Tags */}
                     <div className="absolute top-4 left-4 flex items-center gap-2">

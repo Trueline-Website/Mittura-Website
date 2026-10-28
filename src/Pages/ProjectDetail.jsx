@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, MapPin, Tag, Calendar, ShieldCheck, ArrowRight } from "lucide-react";
+import { ArrowLeft, MapPin, Tag, Calendar, ShieldCheck, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import projects from "../data/projects.json";
 import logoWhite from "../assets/mitturafooter.png";
 
 export default function ProjectDetail() {
   const { id } = useParams();
   const project = projects.find((p) => p.id === parseInt(id));
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+
+  const images = project?.images && project.images.length > 0
+    ? project.images
+    : project?.gallery && project.gallery.length > 0
+    ? project.gallery
+    : project?.mainImage
+    ? [project.mainImage]
+    : [];
+
+  const hasMultiple = images.length > 1;
 
   if (!project) {
     return (
@@ -111,7 +122,7 @@ export default function ProjectDetail() {
 
           {/* RIGHT: MAIN PROJECT PHOTOGRAPHY (60% VISUAL FOCAL POINT) */}
           <div className="lg:col-span-6">
-            <div className="relative aspect-[4/3] bg-[#3D181A] overflow-hidden border border-slate-200 shadow-lg">
+            <div className="relative aspect-[4/3] bg-[#3D181A] overflow-hidden border border-slate-200 shadow-lg group">
               {project.isPlaceholder ? (
                 <div className="w-full h-full bg-gradient-to-r from-[#3D181A] via-[#812425] to-[#C43030] flex flex-col items-center justify-center p-8 text-center relative">
                   <img
@@ -129,15 +140,55 @@ export default function ProjectDetail() {
               ) : (
                 <>
                   <img
-                    src={project.mainImage}
+                    src={images[activeImageIndex] || project.mainImage}
                     alt={project.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     onError={(e) => {
                       e.target.src = "/photo2.jpeg";
                     }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                  <div className="absolute bottom-6 left-6 right-6 text-white">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+                  
+                  {/* Slider Controls */}
+                  {hasMultiple && (
+                    <>
+                      <button
+                        type="button"
+                        onClick={() => setActiveImageIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1))}
+                        aria-label="Previous image"
+                        className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/60 hover:bg-[#C43030] text-white flex items-center justify-center backdrop-blur-xs transition-all duration-200 shadow-lg hover:scale-110"
+                      >
+                        <ChevronLeft className="w-5 h-5" />
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={() => setActiveImageIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1))}
+                        aria-label="Next image"
+                        className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/60 hover:bg-[#C43030] text-white flex items-center justify-center backdrop-blur-xs transition-all duration-200 shadow-lg hover:scale-110"
+                      >
+                        <ChevronRight className="w-5 h-5" />
+                      </button>
+
+                      <div className="absolute top-4 right-4 z-20 flex items-center gap-1.5 bg-black/50 px-2.5 py-1 rounded-full backdrop-blur-xs">
+                        {images.map((_, i) => (
+                          <button
+                            key={i}
+                            type="button"
+                            onClick={() => setActiveImageIndex(i)}
+                            aria-label={`View image ${i + 1}`}
+                            className={`transition-all rounded-full ${
+                              i === activeImageIndex
+                                ? "w-5 h-1.5 bg-[#D4AF37]"
+                                : "w-1.5 h-1.5 bg-white/60 hover:bg-white"
+                            }`}
+                          />
+                        ))}
+                      </div>
+                    </>
+                  )}
+
+                  <div className="absolute bottom-6 left-6 right-6 text-white pointer-events-none">
                     <span className="text-[10px] font-mono uppercase tracking-widest text-[#D4AF37] block">
                       MITTURA BUILDING CONTRACTING L.L.C.
                     </span>

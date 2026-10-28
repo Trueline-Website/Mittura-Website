@@ -74,8 +74,17 @@
     "timeline": "Awarded Project",
     "scope": "Turnkey Civil Construction, MEP & 24-Month Platinum Guarantee",
     "description": "A villa project awarded to Mittura by SAJ Development. Mittura brings technical precision, our signature 24-Month Platinum Guarantee, and transparent milestone governance to its delivery.",
-    "mainImage": "/hero-villa.png",
-    "gallery": ["/hero-villa.png", "/about-img.png", "/process-management.png"],
-    "isPlaceholder": true
+    "mainImage": "/projects/saj-villa-1.jpg",
+    "images": [
+      "/projects/saj-villa-1.jpg",
+      "/projects/saj-villa-2.jpg",
+      "/projects/saj-villa-3.jpg"
+    ],
+    "gallery": [
+      "/projects/saj-villa-1.jpg",
+      "/projects/saj-villa-2.jpg",
+      "/projects/saj-villa-3.jpg"
+    ],
+    "isPlaceholder": false
   }
 ]
